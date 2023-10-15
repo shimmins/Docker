@@ -1,0 +1,41 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+   . /etc/bashrc
+fi
+
+#
+# Sfecific configuration
+#
+export PS1='\[\e[31;1m\][\u@\h\[\e[33;1m\] \w]\$ \[\e[m\]'
+alias c='clear'
+alias vi='/usr/bin/vim'
+
+alias code='code --no-sandbox --user-data-dir=/root/vscode'
+alias vscode='code'
+
+alias ans='ansible'
+alias anp='ansible-playbook'
+alias anpchk='ansible-playbook --syntax-check'
+alias anx='ansible-galaxy'
+alias anv='ansible-vault'
+alias ande="ansible-doc $1 | sed -n '/^EXAMPLES/,$p' | more"
+
+alias irm='docker rmi -f $(docker images -aq)'
+alias crm='docker rm -f $(docker ps -aq)'
+alias vrm='docker volume rm -f $(docker volume ls -q)'
+alias nrm='docker network prune -f'
+alias dirm='docker image prune -f'
+alias google-chrome='google-chrome --no-sandbox'
+alias chrome='google-chrome'
+
+alias dockerc='docker-compose'
+alias up='docker compose up -d'
+alias down='docker compose down -v'
