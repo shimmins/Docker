@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+# docker network create mynet
+
+services:
+# docker run -d --name postgresdb --network mynet --restart=always \
+# -e POSTGRES_PASSWORD=password postgres
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+
+# docker run -d --name adminer --network mynet --restart=always \
+# -p 8080:8080 adminer
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

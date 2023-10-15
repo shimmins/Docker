@@ -1,0 +1,3 @@
+[dockers]
+docker1.example.com ansible_host=192.168.10.10 ansible_if=ens160 ps1_color=31
+docker2.example.com ansible_host=192.168.10.20 ansible_if=ens160 ps1_color=32
